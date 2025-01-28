@@ -11,17 +11,21 @@ Document Similarity Search: Explore relevant sections of the FAQ page that match
 Customizable UI: Stylish and user-friendly interface with custom CSS for a seamless experience.
 
 ## How to Run
-1. Setup Environment
 
-# Clone the repository
+## 1. Setup Environment
+
+## Clone the repository
 git clone https://github.com/your-repo/forvr-mood-faq-chat.git
+
 cd forvr-mood-faq-chat
 
-# Create and activate a virtual environment (optional but recommended)
+## Create and activate a virtual environment (optional but recommended)
+
 python -m venv venv
+
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+## Install dependencies
 pip install -r requirements.txt
 
 ## 2. Get API Key
@@ -29,15 +33,13 @@ Visit Groq Cloud and sign up for an API key.
 
 Add the API key to your .env file:
 
-plaintext
-Copy
+
 GROQ_API_KEY=your_groq_api_key_here
 
 ## 3. Run the Application
 Start the Streamlit app:
 
-bash
-Copy
+
 streamlit run app.py
 
 ## 4. Use the Application
