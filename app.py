@@ -7,7 +7,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
-from langchain_community.vectorstores import Chroma  
+from langchain_community.vectorstores import FAISS 
 import time
 
 from dotenv import load_dotenv
@@ -28,11 +28,11 @@ if "vector" not in st.session_state:
     st.session_state.text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     st.session_state.final_documents = st.session_state.text_splitter.split_documents(st.session_state.docs[:50])
 
-    # Create Chroma vector store
-    st.session_state.vectors = Chroma.from_documents(
-        documents=st.session_state.final_documents,
-        embedding=st.session_state.embeddings
-    )
+    # Create FAISS vector store
+    st.session_state.vectors = FAISS.from_documents(
+    documents=st.session_state.final_documents,
+    embedding=st.session_state.embeddings
+)
 
 # Custom CSS to style the title
 st.markdown("""
